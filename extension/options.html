@@ -1,0 +1,131 @@
+<html>
+<head><title>Visual History Options</title>
+<script type="text/javascript" src="jscolor/jscolor.js"></script>
+<!--<link type="text/css" href="css/ui-darkness/jquery-ui-1.8.12.custom.css" rel="stylesheet" />	-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js" type="text/javascript"></script>-->
+</head>
+<script type="text/javascript">
+// Saves options to localStorage.
+function save_options() {
+  var select = document.getElementById("milsec");
+  var milsec = 1000*select.children[select.selectedIndex].value;
+  var backcolor = $("#backcolor").val();
+  //alert(backcolor);
+  localStorage["backcolor"]=backcolor;
+  localStorage["milsec"] = milsec;
+  
+  localStorage["chargeConstant"]=$("#chargeConstant").val();
+  localStorage["dragConstant"] =$("#dragConstant").val();
+  localStorage["springConstant"]=$("#springConstant").val();
+  localStorage["chargeMaxDistance"]=$("#chargeMaxDistance").val();
+  localStorage["springLength"] =$("#springLength").val();
+  
+  var select2 = document.getElementById("minvisit");
+  var minvisit = select2.children[select2.selectedIndex].value;
+  localStorage["minvisit"] = minvisit;
+
+  // Update status to let user know options were saved.
+  var status = document.getElementById("status");
+  status.innerHTML = "Options Saved.";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 750);
+}
+
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+	if(localStorage["chargeConstant"]==undefined){
+		localStorage["chargeConstant"]=-80;
+		localStorage["dragConstant"] =0.06;
+		localStorage["springConstant"]=0.05;
+		localStorage["chargeMaxDistance"]=600;
+		localStorage["springLength"] =150;
+	}
+	$("#chargeConstant").val(localStorage["chargeConstant"]);
+	$("#dragConstant").val(localStorage["dragConstant"]);
+	$("#springConstant").val(localStorage["springConstant"]) ;
+	$("#chargeMaxDistance").val(localStorage["chargeMaxDistance"]) ;
+	$("#springLength").val(localStorage["springLength"]);
+
+
+  var milsec = localStorage["milsec"];
+  var backcolor = localStorage["backcolor"];
+  $("#backcolor").val(backcolor);
+  if (!!milsec) {
+	  var select = document.getElementById("milsec");
+	  for (var i = 0; i < select.children.length; i++) {
+		var child = select.children[i];
+		if (child.value == milsec/1000) {
+		  child.selected = "true";
+		  break;
+		}
+	  }
+  }
+  var minvisit = localStorage["minvisit"];
+  if (!!minvisit) {  
+	  var select2 = document.getElementById("minvisit");
+	  for (var i = 0; i < select2.children.length; i++) {
+		var child = select2.children[i];
+		if (child.value == minvisit) {
+		  child.selected = "true";
+		  break;
+		}
+	  }
+  }
+}
+
+function effacer(){
+	localStorage.clear();
+	window.location.reload();
+}
+</script>
+
+<body onload="restore_options()">
+<h1>Options</h1>
+<div id="status"></div>
+
+
+Background color:
+#<input type="text" class="color" name="backcolor" id="backcolor" /><br />
+
+
+History interval:
+<select id="milsec">
+ <option value="3600">1 hour</option>
+ <option value="21600">6 hours</option>
+ <option value="86400">1 day</option>
+ <option value="259200">3 days</option>
+ <option value="604800">1 week</option>
+ <option value="2592000">1 month</option>
+ <option value="5184000">2 months</option>
+ <option value="7776000">3 months</option>
+ <option value="15552000">6 months</option>
+ <option value="31536000">1 year</option>
+</select>
+
+<br>
+Minimum amount of visits (alpha):
+<select id="minvisit">
+ <option value="1">1</option>
+ <option value="2">2</option>
+ <option value="3">3</option>
+ <option value="5">5</option>
+ <option value="10">10</option>
+ <option value="15">15</option>
+ <option value="20">20</option>
+ <option value="30">30</option>
+ <option value="50">50</option>
+ <option value="100">100</option>
+</select>
+<p>
+<h2>Physics</h2>
+chargeConstant (-80) <input type="text"  name="backcolor" id="chargeConstant" /><br />
+dragConstant (0.06) <input type="text"  name="backcolor" id="dragConstant" /><br />
+springConstant (0.05) <input type="text"  name="backcolor" id="springConstant" /><br />
+chargeMaxDistance (600) <input type="text"  name="backcolor" id="chargeMaxDistance" /><br />
+springLength (150) <input type="text"  name="backcolor" id="springLength" /><br />
+<br>
+<button onclick="save_options()">Save</button><button onclick="effacer()">Restore all parameters of the app</button>
+</body>
+</html>

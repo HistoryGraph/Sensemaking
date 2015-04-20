@@ -1,0 +1,79 @@
+{
+  "ext_name": {
+    "message": "Visual History",
+    "description": "Visual History for Chrome web browser. Display your browsing behaviour through an interactive graph."
+  },
+  "desc":{
+	"message": "Visual History for Chrome web browser. Display your browsing behaviour through an interactive graph.",
+    "description": "desc"
+  },
+  
+  "corner_name": {
+    "message": "Visual history for Chrome",
+    "description": "nom du coin"
+  },
+  "visit_min_number": {
+    "message": "Minimal amount of visits",
+    "description": "visits minimal amount"
+  },
+  "last_visits": {
+    "message": "Last visits:",
+    "description": "last_visits"
+  },
+  "noNodeSelected": {
+    "message": "No node selected.<br>Click on a node to know its history.",
+    "description": "noNodeSelected"
+  },
+  "collapsableHeader": {
+    "message": "<img src=\"double_arrow.png\" /> History for this URL",
+    "description": "collapsableHeader"
+  },
+  "buttonExport": {
+    "message": "Export the graph",
+    "description": "buttonExport"
+  },
+  "buttonAbout": {
+    "message": "About",
+    "description": "buttonAbout"
+  },
+  "aboutText": {
+    "message": "<h2>Visual history for Google Chrome</h2>By David Combe<br><a href=\"mailto:david.combe@gmail.com\">david.combe@gmail.com</a>, <a target=\"_blank\" href=\"http://twitter.com/ranumao\">Twitter</a>,<br>Emilie Samuel and Jordan Bano<p>Uses <a target=\"_blank\" href=\"http://vis.stanford.edu/protovis/\">Protovis</a> by Stanford University<br>Uses <a target=\"_blank\" href=\"http://jquery.com\">JQuery</a></p>",
+    "description": "aboutText"
+  },
+  "refresh": {
+    "message": "Refresh",
+    "description": "refresh"
+  },
+  "pajekHeader": {
+    "message": "You can open the graph in several programs like <a target=\"_blank\" href='http://gephi.org'>Gephi</a>.<br>Graph in the <a target=\"_blank\" href='http://gephi.org/users/supported-graph-formats/pajek-net-format/'>Pajek format</a>.<br><a href=\"javascript:focus1()\">Select</a>",
+    "description": "pajekHeader"
+  },
+  "gexfHeader": {
+    "message": "Graph in the GEXF format (dynamic)<br><a href=\"javascript:focus2()\">Select</a>",
+    "description": "gexfHeader"
+  },
+  "subdomain": {
+    "message": "Sub-domain",
+    "description": "subdomain"
+  },
+  "domain": {
+    "message": "Domain",
+    "description": "domain"
+  },
+  "historyInterval": {
+    "message": "History interval",
+    "description": "historyInterval" 
+  },
+  "firstLogin": {
+    "message": "Hello,<br>Thank you for your interest in Visual History. Here are some tips for you.<br>Two pages are linked together if you consulted them consecutively in less time than 20 min.<br>Colors: <ol><li>currently opened webpages are in yellow;</li><li>the other pages are in blue (oldest ones) or in green if they were consulted recently.</li></ol><p>Do not forget to click <i>Refresh</i> in order to apply changes made on the toolbar.<br>You can too zoom in and out using your mouse wheel.<p>You can find some other options in the options page of the webapp.<p>Now you can play.",
+    "description": "firstLogin"
+  },
+  "firstLoginTitle": { 
+    "message": "Did you know?",
+    "description": "firstLoginTitle"
+  }
+  
+  
+  
+  
+}

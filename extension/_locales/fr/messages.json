@@ -1,0 +1,82 @@
+{
+  "ext_name": {
+    "message": "Historique visuel",
+    "description": "name"
+  },
+  "desc":{
+	"message": "Historique visuel pour le navigateur Chrome. Affiche votre comportement de navigation par l'intermédiaire d'un graphe interactif.",
+    "description": "desc"
+  },
+  "corner_name": {
+    "message": "Historique visuel pour Google Chrome",
+    "description": "nom du coin"
+  },
+  "visit_min_number": {
+    "message": "Nombre minimal de visites",
+    "description": "visits minimal amount"
+  },
+  "last_visits": {
+    "message": "Dernières visites :",
+    "description": "last_visits"
+  },
+  "noNodeSelected": {
+    "message": "Aucun noeud sélectionné.<br>Cliquez sur un noeud pour connaïtre son historique.",
+    "description": "noNodeSelected"
+  },
+  "collapsableHeader": {
+    "message": "<img src=\"double_arrow.png\" /> Historique de cette URL",
+    "description": "collapsableHeader"
+  },
+  "buttonExport": {
+    "message": "Exporter le graphe",
+    "description": "buttonExport"
+  },
+  "buttonAbout": {
+    "message": "A propos",
+    "description": "buttonAbout"
+  },
+  "aboutText": {
+    "message": "<h2>Historique visuel pour Google Chrome</h2>Par David Combe<br><a href=\"mailto:david.combe@gmail.com\">david.combe@gmail.com</a>, <a target=\"_blank\" href=\"http://twitter.com/ranumao\">Twitter</a>,<br>Emilie Samuel et Jordan Bano<p>Utilise <a target=\"_blank\" href=\"http://vis.stanford.edu/protovis/\">Protovis</a> par Stanford University<br>Utilise <a  target=\"_blank\" href=\"http://jquery.com\">JQuery</a></p>",
+    "description": "aboutText"
+  },
+  "refresh": {
+    "message": "Actualiser",
+    "description": "refresh"
+  },
+  "pajekHeader": {
+    "message": "Le graphe vous est proposé aux formats <a target=\"_blank\" href='http://gephi.org/users/supported-graph-formats/pajek-net-format/'>Pajek</a> et <a href='http://gexf.org'>GEXF</a>. Vous pouvez l'ouvrir dans divers logiciels tels que <a target=\"_blank\" href='http://gephi.org'>Gephi</a>.<br><a href=\"javascript:focus1()\">Sélectionner</a>",
+    "description": "pajekHeader"
+  },
+  "gexfHeader": {
+    "message": "Graphe au format GEXF (dynamique)<br><a href=\"javascript:focus2()\">Sélectionner</a>",
+    "description": "gexfHeader"
+  },
+  "subdomain": {
+    "message": "Sous-domaine",
+    "description": "subdomain"
+  },
+  "domain": {
+    "message": "Domaine",
+    "description": "domain"
+  }, 
+  "historyInterval": {
+    "message": "Intervalle d'historique",
+    "description": "historyInterval"
+  },
+  "firstLogin": {
+    "message": "<!--<iframe src=\"https://docs.google.com/present/embed?id=dpftqzg_221r7zth9gd&interval=5&autoStart=true\" frameborder=\"0\" width=\"410\" height=\"342\"></iframe>-->Bonjour, <br>Merci de votre intérêt pour <i>Historique visuel</i>. Voici quelques astuces sur son utilisation.<p>Deux pages sont liées si elles ont été consultées consécutivement dans un laps de temps inférieur à 20 minutes.<p>Concernant la signification des couleurs de noeuds : <ol><li>les pages actuellement consultées sont indiquées en jaune;</li><li>les autres pages sont indiquées selon un dégradé allant du bleu pour les plus anciennes jusqu'au vert pour les plus récentes.</li></ol><p>Vous pouvez adapter le zoom avec la roulette.<br>Pensez à cliquer sur <i>Actualiser</i> après avoir ajusté une option dans la barre d'outils.<p>Vous pouvez aussi assouvir vos envies d'expérimentation dans les <a target=\"_blank\" href=\"options.html\">options</a>.",
+    "description": "firstLogin"
+  },
+  "firstLoginTitle": {
+    "message": "Le saviez-vous ?",
+    "description": "firstLoginTitle"
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  }
