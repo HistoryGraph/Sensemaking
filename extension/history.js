@@ -88,7 +88,6 @@ function gotURLs(urls){
     currentIndex = 0;
     // set first current url
     curUrl = theUrls[currentIndex].url;
-    console.log(curUrl);
     // now get info from each url
     chrome.history.getVisits({"url": curUrl}, formNodes);
     console.log(total);

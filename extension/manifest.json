@@ -13,10 +13,8 @@
   },
 
   "permissions": [
-    "storage",
     "history",
-    /*
-    "activeTab",*/
+    "activeTab",
     "https://ajax.googleapis.com/"
   ]
 }
