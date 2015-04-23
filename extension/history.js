@@ -68,7 +68,8 @@ function formNodes(visits) {
     // visits is an array of VisitItem
 
     // create a new node
-    nodes.push({"id" : currentIndex, "url" : curUrl, "totalVisits" : visits.length});
+    var title = theUrls[currentIndex].title;
+    nodes.push({"id" : currentIndex, "url" : curUrl, "title" : title, "totalVisits" : visits.length});
 
     // loop through all visits to a page, form an edge
     for (var i = 0; i < visits.length; i++) {
