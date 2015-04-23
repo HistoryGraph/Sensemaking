@@ -26,7 +26,7 @@ function formEdges(visits) {
         // the referrer's id
         var fromId = visitItem.referringVisitId;
         // this is the from index!
-        fromIndex = visitIdToNodeIndex[fromId];
+        fromIndex = visitIdToNodeIndex[fromId.toString()];
         // add this edge to edges!
         edges.push({"from" : fromIndex, "to" : currentIndex, "time" : timestamp});
     }
@@ -59,7 +59,7 @@ function formNodes(visits) {
         var visitItem = visits[i];
         // the item's id (use later)
         var visitId = visitItem.visitId;
-        visitIdToNodeIndex[visitId] = currentIndex;
+        visitIdToNodeIndex[visitId.toString()] = currentIndex;
     }
 
     // update the count
