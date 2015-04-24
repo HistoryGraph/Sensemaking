@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // var graph = JSON.parse(localStorage.historyGraph);
+  var graph = JSON.parse(localStorage.historyGraph);
 
-  var width = 500,
-      height = 300
+  var width = 1000,
+      height = 600
 
   var svg = d3.select("body").append("svg")
       .attr("width", width)
@@ -14,17 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
       .charge(-100)
       .size([width, height]);
 
-  d3.json(localStorage.historyGraph, function(error, json) {
+  if (graph != null && graph != undefined){
     var edges = [];
-      json.links.forEach(function(e) { 
-      var sourceNode = json.nodes.filter(function(n) { return n.id === e.source; })[0],
-      targetNode = json.nodes.filter(function(n) { return n.id === e.target; })[0];
+      graph.edges.forEach(function(e) { 
+      var sourceNode = graph.nodes.filter(function(n) { return n.id === e.source; })[0],
+      targetNode = graph.nodes.filter(function(n) { return n.id === e.target; })[0];
           
       edges.push({source: sourceNode, target: targetNode});
       });
       
     force
-        .nodes(json.nodes)
+        .nodes(graph.nodes)
         .links(edges)
         .start();
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .attr("class", "link");
 
     var node = svg.selectAll(".node")
-        .data(json.nodes)
+        .data(graph.nodes)
       .enter().append("g")
         .attr("class", "node")
         .call(force.drag);
@@ -59,5 +59,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
       node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
     });
-  });
+  };
 });
