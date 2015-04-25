@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var width = 1000,
       height = 600
 
-  var svg = d3.select("body").append("svg")
+  var svg = d3.select("#graph").append("svg")
     .attr("viewBox", "0 0 " + width + " " + height)
       // .attr("width", width)
       // .attr("height", height);
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var sourceNode = graph.nodes.filter(function(n) { return n.id === e.source; })[0],
       targetNode = graph.nodes.filter(function(n) { return n.id === e.target; })[0];
           
-      edges.push({source: sourceNode, target: targetNode});
+      edges.push({source: sourceNode, target: targetNode, times: e.times});
       });
       
     force
@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
       .enter().append("line")
         .attr("class", "link")
         .style("stroke", "#ccc")
+        .style("stroke-width", function (e) { return e.times.length + 1;})
         .style("marker-end",  "url(#suit)");
 
     var node = svg.selectAll(".node")
@@ -98,8 +99,13 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .style("stroke", 'rgba(160,160,160,1)')
         .on('mouseover', function(d){
-            var nodeSelection = d3.select(this).style({stroke: 'rgba(30,30,30,1)'}).text(function(d) { return d.title;});
-
+            d3.select(this).style({stroke: 'rgba(30,30,30,1)'}).text(function(d) { return d.title;});
+            var popup = document.getElementById("pop");
+            if (popup != undefined) {
+              popup.style.top = 0;
+              popup.style.left = 0;
+              popup.src = "http://free.pagepeeker.com/v2/thumbs.php?size=x&url=" + d.url;
+            }
         })
         .on('mouseout', function(d){
           d3.select(this).style({stroke: 'rgba(160,160,160,1)',})
